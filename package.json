@@ -11,7 +11,7 @@
     "type": "git",
     "url": "git+ssh://git@github.com/HRR47-FEC-Burke/reburke-proxy-one.git"
   },
-  "author": "Doruk Gurleyen",
+  "author": "Zach Mansell",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/HRR47-FEC-Burke/reburke-proxy-one/issues"

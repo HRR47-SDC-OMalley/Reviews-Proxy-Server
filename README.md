@@ -4,10 +4,9 @@
 
 ## Related Projects
 
-  - https://github.com/HRR47-FEC-Burke/similar-listings-and-news
-  - https://github.com/HRR47-FEC-Burke/seller-reviews
-  - https://github.com/HRR47-FEC-Burke/sidebar
-  - https://github.com/HRR47-FEC-Burke/main-photo
+  - https://github.com/HRR47-SDC-OMalley/sidebar-service
+  - https://github.com/HRR47-SDC-OMalley/main-photo
+  - https://github.com/HRR47-SDC-OMalley/Reviews-Service
 
 ## Table of Contents
 
