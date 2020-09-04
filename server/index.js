@@ -2,10 +2,18 @@ const path = require('path');
 const express = require('express');
 const { createProxyMiddleware } = require('http-proxy-middleware');
 const pug = require('pug');
-const { port, url } = require('./config.js');
+const { port, url } = require('../config');
+/*
+*  Metrics
+*/
+require('newrelic');
 
 const app = express();
 app.set('view engine', 'pug');
+
+/*
+  Commented-out code is for additional services.
+*/
 
 // const URL = process.env.URL || 'http://localhost';
 // const PORT = process.env.PORT || '3000';
@@ -26,9 +34,9 @@ const CLOUD_STYLE_URL = process.env.CLOUD_STYLE_URL;
 //   || 'http://localhost:3210/bundle.js';
 // User Reviews
 const reviewsTarget = process.env.REVIEWS_TARGET
-  || 'http://localhost:2625';
+  || 'http://localhost:3001';
 const reviewsScriptUrl = process.env.REVIEWS_SCRIPT
-//   || 'http://localhost:2625/dist/bundle.js';
+  || 'http://localhost:3001/dist/bundle.js';
 // // Similar Listing and News
 // const slnTarget = process.env.SLN_TARGET
 //   || 'http://localhost:3005';
@@ -40,10 +48,10 @@ const reviewsScriptUrl = process.env.REVIEWS_SCRIPT
  */
 app.get('/item/:id', (req, res) => {
   res.end(pug.renderFile(path.resolve(__dirname, './../client/listing.pug'), {
-    photoScriptUrl,
-    sbScriptUrl,
+    // photoScriptUrl,
+    // sbScriptUrl,
     reviewsScriptUrl,
-    slnScriptUrl
+    // slnScriptUrl
   }));
 });
 
