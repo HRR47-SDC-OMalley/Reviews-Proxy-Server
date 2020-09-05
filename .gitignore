@@ -3,3 +3,5 @@ node_modules
 .env.swp
 .env.docker
 .env.docker.swp
+newrelic.js
+newrelic_agent.log
