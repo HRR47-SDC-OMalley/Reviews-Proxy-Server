@@ -6,7 +6,7 @@
   "scripts": {
     "test": "$(npm bin)/artillery run spec/artillery-config.yaml",
     "start": "NODE_ENV=production node server/index.js",
-    "dev": "node -r dotenv/config server/index.js"
+    "dev": "nodemon -r dotenv/config server/index.js"
   },
   "repository": {
     "type": "git",

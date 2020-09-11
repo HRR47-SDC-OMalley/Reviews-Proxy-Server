@@ -28,10 +28,10 @@ const CLOUD_STYLE_URL = process.env.CLOUD_STYLE_URL;
 // const photoScriptUrl = process.env.PHOTO_SCRIPT
 //   || 'http://localhost:3001/bundle.js';
 // // Sidebar
-// const sbTarget = process.env.SB_TARGET
-//   || 'http://localhost:3210';
-// const sbScriptUrl = process.env.SB_SCRIPT
-//   || 'http://localhost:3210/bundle.js';
+const sbTarget = process.env.SB_TARGET
+  || 'http://localhost:3210';
+const sbScriptUrl = process.env.SB_SCRIPT
+  || 'http://localhost:3210/bundle.js';
 // User Reviews
 const reviewsTarget = process.env.REVIEWS_TARGET
   || 'http://localhost:3001';
@@ -43,13 +43,25 @@ const reviewsScriptUrl = process.env.REVIEWS_SCRIPT
 // const slnScriptUrl = process.env.SLN_SCRIPT
 //   || 'http://localhost:3005/similar-listings-news.bundle.js';
 
+/*
+ * For Loader.io testing:
+ */
+app.get('*/loaderio-6f4f104b6b3491d06405a97509c25d26', async (req, res) => {
+  try {
+    await res.sendFile(path.join(__dirname, '..', '/loaderio-6f4f104b6b3491d06405a97509c25d26.txt'));
+    console.log('Loader file sent');
+  } catch (err) {
+    res.status(500).end(err);
+  }
+});
+
 /**
  * Serve template
  */
 app.get('/item/:id', (req, res) => {
   res.end(pug.renderFile(path.resolve(__dirname, './../client/listing.pug'), {
     // photoScriptUrl,
-    // sbScriptUrl,
+    sbScriptUrl,
     reviewsScriptUrl,
     // slnScriptUrl
   }));
@@ -77,8 +89,8 @@ if (CLOUD_STYLE_URL) {
 /**
  * Sidebar Proxy
  */
-// const sbProxy = { target: sbTarget, changeOrigin: true };
-// app.use('*/sb/api/*', createProxyMiddleware(sbProxy));
+const sbProxy = { target: sbTarget, changeOrigin: true };
+app.use('*/sb/api/*', createProxyMiddleware(sbProxy));
 
 /**
  * Seller Reviews Proxy

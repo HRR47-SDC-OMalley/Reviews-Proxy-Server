@@ -5,3 +5,6 @@ node_modules
 .env.docker.swp
 newrelic.js
 newrelic_agent.log
+newrelic-legacy.js
+newrelic_agent-legacy.log
+loaderio-6f4f104b6b3491d06405a97509c25d26.txt
