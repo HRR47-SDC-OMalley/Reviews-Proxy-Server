@@ -29,7 +29,7 @@
     "dotenv": "^8.2.0",
     "eslint": "^7.6.0",
     "eslint-config-hackreactor": "https://github.com/reactorcore/eslint-config-hackreactor",
-    "grunt": "^1.3.0",
+    "grunt": "^1.5.3",
     "grunt-aws": "^0.7.1"
   }
 }
