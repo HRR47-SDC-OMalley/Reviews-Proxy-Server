@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/HRR47-FEC-Burke/reburke-proxy-one#readme",
   "dependencies": {
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "http-proxy-middleware": "^1.0.5",
     "newrelic": "^6.13.0",
     "pug": "^3.0.0"
